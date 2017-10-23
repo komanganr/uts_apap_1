@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:include="/layout/master :: master">
+
+<div th:fragment="content" class="container">
+	<!-- Container -->
+	<h3 class="my-4">Daftar Produk</h3>
+
+	<hr />
+
+	<!--  Lihat Seluruh Produk-->
+	<div class="row">
+		<div class="col-lg-12">
+			<table id="tabel_allProduct"
+				class="table table-hover table-condensed table-striped"
+				cellspacing="0" style="font-size: 16px;">
+				<thead class="thead-inverse">
+					<tr>
+						<th>No</th>
+						<th>Nama Produk</th>
+						<th>Deskripsi</th>
+						<th>Kategori Produk</th>
+						<th>Pabrikan</th>
+						<th>Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="produk, iterationStatus: ${produk}">
+						<td><p th:text="${iterationStatus.count}">No</p></td>
+						<td><p th:text="${produk.nama}">Nama Produk</p></td>
+						<td><p th:text="${produk.deskripsi}">Deskripsi Produk</p></td>
+						<td><p th:text="${produk.kategori}">Kategori Produk</p></td>
+						<td><p th:text="${produk.pabrikan}">Pabrikan Produk</p></td>
+						<td class="text-center">
+							<div class="btn-group" role="group">
+								<a class="btn btn-info" th:href="'/ubah/' + ${produk.id}"> Update Data
+								</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--  end of Lihat Seluruh Produk -->
+	
+	<!-- end of Container -->
+
+</div>
+</html>
