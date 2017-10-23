@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductModel {
-	/*private int id;
+	private int id;
 	private String nama;
 	private String deskripsi;
 	private String kategori;
@@ -17,8 +17,8 @@ public class ProductModel {
 	private int harga;
 	private int tahun_produksi;
 	private int jumlah_stok;
-	private String kondisi;*/
-	private Integer id;
+	private String kondisi;
+/*	private Integer id;
 	private String nama;
 	private String deskripsi;
 	private String kategori;
@@ -27,5 +27,5 @@ public class ProductModel {
 	private int harga;
 	private int tahunProduksi;
 	private int jumlahStok;
-	private String kondisi;
+	private String kondisi;*/
 }

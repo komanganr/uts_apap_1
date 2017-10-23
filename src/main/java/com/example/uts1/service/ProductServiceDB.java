@@ -23,9 +23,9 @@ public class ProductServiceDB implements ProductService {
 	}
 	
 	@Override
-	public ProductModel selectProduk(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ProductModel selectProduk(int id) {
+		log.info ("select produk with id {}", id);
+        return productMapper.selectProduk (id);
 	}
 
 	@Override

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:include="/layout/master :: master">
+
+<div th:fragment="content" class="container">
+	<!-- Container -->
+	<h3 class="my-4">Detail Produk</h3>
+
+	<hr />
+
+	<!--  Lihat Seluruh Produk-->
+	<div class="row">
+		<div class="table-container">
+			<table class="table table-hover table-condensed" id="tabel-mhs"
+				cellspacing="0" style="font-size: 16px;">
+				<tr>
+					<td width="25%"><b>Nama Produk</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.nama}">Produk Nama</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Deskripsi Produk</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.deskripsi}">Produk Deskripsi</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Kategori Produk</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.kategori}">Produk Kategori</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Pabrikan</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.pabrikan}">Produk Pabrikan</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Berat</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.berat}">Produk Berat</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Harga</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.harga}">Produk Harga</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Tahun Produksi</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.tahun_produksi}">Produk Tahun Produksi</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Jumlah Stok Tersedia</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.jumlah_stok}">Produk Stok</td>
+				</tr>
+				<tr>
+					<td width="25%"><b>Kondisi Produk</b></td>
+					<td style="width: 1%;">:</td>
+					<td th:text="${produk.kondisi}">Produk Kondisi</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!--  end of Lihat Seluruh Produk -->
+
+	<!-- end of Container -->
+
+</div>
+</html>
