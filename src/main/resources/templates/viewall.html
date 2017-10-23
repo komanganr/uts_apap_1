@@ -27,13 +27,13 @@
 				<tbody>
 					<tr th:each="produk, iterationStatus: ${produk}">
 						<td><p th:text="${iterationStatus.count}">No</p></td>
-						<td><p th:text="${produk.nama}">Nama Produk</p></td>
+						<td><a th:href="'/product/view/' + ${produk.id}"><p th:text="${produk.nama}">Nama Produk</p></a></td>
 						<td><p th:text="${produk.deskripsi}">Deskripsi Produk</p></td>
 						<td><p th:text="${produk.kategori}">Kategori Produk</p></td>
 						<td><p th:text="${produk.pabrikan}">Pabrikan Produk</p></td>
 						<td class="text-center">
 							<div class="btn-group" role="group">
-								<a class="btn btn-info" th:href="'/ubah/' + ${produk.id}"> Update Data
+								<a class="btn btn-info" th:href="'/product/update/' + ${produk.id}"> Update Data
 								</a>
 							</div>
 						</td>
