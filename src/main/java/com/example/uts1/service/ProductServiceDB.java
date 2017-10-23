@@ -36,8 +36,7 @@ public class ProductServiceDB implements ProductService {
 
 	@Override
 	public void addProduk(ProductModel produk) {
-		// TODO Auto-generated method stub
-
+		productMapper.addProduk (produk);
 	}
 
 }

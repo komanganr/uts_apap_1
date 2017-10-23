@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:include="/layout/master :: master">
+
+<div th:fragment="content" class="container">
+	<h3 class="my-4" th:text="'Tambah Produk'">Tambah Produk</h3>
+	<!--  Tambah Produk -->
+	<div class="row">
+		<div class="col-lg-12">
+			<form name="sentMessage" id="addProdukForm"
+				action="/product/add/submit" method="POST">
+				<div class="form-group">
+					<label for="nama" class="col-md-10 control-label">Nama</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="nama" class="form-control" type="text"
+								required="required" placeholder="Masukkan nama produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="deskripsi" class="col-md-10 control-label">Deskripsi Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="deskripsi" class="form-control" type="text"
+								required="required" placeholder="Masukkan deskripsi produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="kategori" class="col-md-10 control-label">Kategori Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<select required="required" name="kategori"
+								class="selectpicker form-control">
+								<option value="">Pilihan Kategori Produk</option>
+								<option value="Laptop">Laptop</option>
+								<option value="Handphone">Handphone</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pabrikan" class="col-md-10 control-label">Pabrikan</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="pabrikan" class="form-control" type="text"
+								required="required" placeholder="Masukkan pabrikan produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="berat" class="col-md-10 control-label">Berat</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="berat" class="form-control" type="text"
+								required="required" placeholder="Masukkan berat produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="harga" class="col-md-10 control-label">Harga</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="harga" class="form-control" type="text"
+								required="required" placeholder="Masukkan harga produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tahun_produksi" class="col-md-10 control-label">Tahun Produksi</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="tahun_produksi" class="form-control" type="text"
+								required="required" placeholder="Masukkan nama produk.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="jumlah_stok" class="col-md-10 control-label">Jumlah Stok Tersedia</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="jumlah_stok" class="form-control" type="text"
+								required="required" placeholder="Masukkan jumlah stok tersedia.." />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="kondisi" class="col-md-10 control-label">Kondisi Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<select required="required" name="kondisi"
+								class="selectpicker form-control">
+								<option value="">Pilihan Kondisi Produk</option>
+								<option value="Baru">Baru</option>
+								<option value="Bekas">Bekas</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-10">
+						<button type="submit" class="btn btn-primary">Tambah</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--  end of Tambah Penduduk -->
+
+	<!-- end of Container -->
+
+</div>
+</html>

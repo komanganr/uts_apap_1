@@ -2,7 +2,7 @@ package com.example.uts1.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Many;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -15,6 +15,7 @@ import com.example.uts1.model.ProductModel;
 public interface ProductMapper {
 	@Select ("SELECT * FROM product")
 	List<ProductModel> viewAllProduct();
+	
 	
 	@Select("SELECT * FROM product WHERE id = #{id}")
 	@Results(value = {
@@ -29,4 +30,9 @@ public interface ProductMapper {
 			@Result(property = "jumlah_stok", column = "jumlah_stok"),
 			@Result(property = "kondisi", column = "kondisi") })
 	ProductModel selectProduk(@Param("id") int id);
+	
+	
+	@Insert("INSERT INTO product (nama, deskripsi, kategori, pabrikan, berat, harga, tahun_produksi, jumlah_stok, kondisi) "
+			+ "VALUES (#{nama}, #{deskripsi}, #{kategori}, #{pabrikan}, #{berat}, #{harga}, #{tahun_produksi}, #{jumlah_stok}, #{kondisi})")
+	void addProduk (ProductModel produk);
 }
