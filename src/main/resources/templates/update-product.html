@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:include="/layout/master :: master">
+
+<div th:fragment="content" class="container">
+	<h3 class="my-4" th:text="'Update Keluarga'">Ubah Produk</h3>
+	<!--  Tambah Keluarga -->
+	<div class="row">
+		<div class="col-lg-12">
+			<form name="updateKeluargaForm" id="updateProdukForm"
+				th:action="@{/product/update/submit/} + ${produk.id}"
+				th:object="${produk}" method="POST">
+				<div class="form-group">
+					<label for="nama" class="col-md-10 control-label">Nama
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="nama" th:value="${produk.nama}" th:field="*{nama}"
+								class="form-control" type="text" required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="deskripsi" class="col-md-10 control-label">Deskripsi
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="deskripsi" th:value="${produk.deskripsi}"
+								th:field="*{deskripsi}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="kategori" class="col-md-10 control-label">Kategori
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="kategori" th:value="${produk.kategori}"
+								th:field="*{kategori}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="pabrikan" class="col-md-10 control-label">Pabrikan
+					</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="pabrikan" th:value="${produk.pabrikan}"
+								th:field="*{pabrikan}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="berat" class="col-md-10 control-label">Berat
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="berat" th:value="${produk.berat}"
+								th:field="*{berat}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="harga" class="col-md-10 control-label">Harga
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="harga" th:value="${produk.harga}"
+								th:field="*{harga}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tahun_produksi" class="col-md-10 control-label">Tahun
+						Produksi</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="tahun_produksi" th:value="${produk.tahun_produksi}"
+								th:field="*{tahun_produksi}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="jumlah_stok" class="col-md-10 control-label">Jumlah
+						Stok Tersedia</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="jumlah_stok" th:value="${produk.jumlah_stok}"
+								th:field="*{jumlah_stok}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="kondisi" class="col-md-10 control-label">Kondisi
+						Produk</label>
+					<div class="col-md-10 inputGroupContainer">
+						<div class="input-group">
+							<input name="kondisi" th:value="${produk.kondisi}"
+								th:field="*{kondisi}" class="form-control" type="text"
+								required="required" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-10">
+						<button type="submit" class="btn btn-primary">Ubah</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--  end of Tambah Keluarga -->
+</div>
+</html>

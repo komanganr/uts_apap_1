@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.uts1.model.ProductModel;
 
@@ -35,4 +36,17 @@ public interface ProductMapper {
 	@Insert("INSERT INTO product (nama, deskripsi, kategori, pabrikan, berat, harga, tahun_produksi, jumlah_stok, kondisi) "
 			+ "VALUES (#{nama}, #{deskripsi}, #{kategori}, #{pabrikan}, #{berat}, #{harga}, #{tahun_produksi}, #{jumlah_stok}, #{kondisi})")
 	void addProduk (ProductModel produk);
+	
+/*	@Update("UPDATE product "
+			+ "SET nama=#{nama}, deskripsi = #{deskripsi}, kategori = #{kategori}, pabrikan= #{pabrikan}, berat = #{berat}, harga=#{harga}, tahun_produksi = #{tahun_produksi}, jumlah_stok = #{jumlah_stok}, kondisi = #{kondisi} "
+			+ "WHERE id = #{id}")
+    void updateProduk(ProductModel produk);*/
+	
+/*	@Update("UPDATE penduduk "
+			+ "SET nama=#{nama}, deskripsi = #{deskripsi}, kategori= #{kategori}, pabrikan = #{pabrikan}, berat = #{berat}, harga = #{harga}, tahun_produksi = #{tahun_produksi}, jumlah_stok= #{jumlah_stok}, kondisi = #{kondisi} "
+			+ "WHERE id = #{id}")
+    void updateProduk(ProductModel produk);*/
+	
+	@Update("UPDATE product SET nama=#{nama}, deskripsi = #{deskripsi}, kategori= #{kategori}, pabrikan = #{pabrikan}, berat = #{berat}, harga = #{harga}, tahun_produksi = #{tahun_produksi}, jumlah_stok= #{jumlah_stok}, kondisi = #{kondisi} WHERE id = #{id}")
+	void updateProduk(ProductModel produk);
 }

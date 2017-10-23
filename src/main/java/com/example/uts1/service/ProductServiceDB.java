@@ -30,8 +30,8 @@ public class ProductServiceDB implements ProductService {
 
 	@Override
 	public void updateProduk(ProductModel produk) {
-		// TODO Auto-generated method stub
-
+		log.info ("produk " + produk + " updated");
+    	productMapper.updateProduk (produk);
 	}
 
 	@Override

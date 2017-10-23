@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.uts1.model.ProductModel;
@@ -59,4 +61,74 @@ public class ProductController {
 		model.addAttribute("title","Add Success");
 		return "viewall";
 	}
+	
+	
+/*	@RequestMapping("/product/update/{id}")
+	public String update(Model model, @PathVariable(value = "id") int id) {
+		ProductModel produk = productDAO.selectProduk(id);
+		if (produk != null) {
+			model.addAttribute("produk", produk);
+			return "update-product";
+		} else {
+			model.addAttribute("id", id);
+			return "not-found";
+		}
+	}*/
+
+/*	@RequestMapping(value = "/product/update/submit/{id}", method = RequestMethod.POST)
+	public String updateProductSubmit (Model model, @PathVariable(value = "id") int id, ProductModel produk) {
+		ProductModel produkAwal = productDAO.selectProduk(id);
+
+		produk.setId(produkAwal.getId());
+		model.addAttribute("id", produk.getId());
+		productDAO.updateProduk(produk);
+		ProductModel produk = new ProductModel(0, nama, deskripsi, kategori, pabrikan, berat, harga, tahun_produksi, jumlah_stok, kondisi);
+		return "/";
+	}*/
+	
+/*	@RequestMapping("/product/update/{id}")
+	public String updatePenduduk (Model model, @PathVariable(value = "id") int id) {
+		ProductModel produk = productDAO.selectProduk(id);
+		if (produk != null) {
+			model.addAttribute("produk", produk);
+			return "update-product";
+		} else {
+			model.addAttribute("errormessage", "Penduduk dengan NIK " + id
+					+ " tidak ditemukan, mohon cek kembali Nomor Induk Kependudukan Anda.");
+			return "layout/error";
+		}
+	}
+	
+	@RequestMapping(value = "/product/update/submit/{id}", method = RequestMethod.POST)
+	public String updatePendudukSubmit (Model model, @PathVariable(value = "id") int id, ProductModel produk) {
+		ProductModel produkAwal = productDAO.selectProduk(id);
+		
+		produk.setId(produkAwal.getId());
+//		model.addAttribute("nik", penduduk.getNik());
+		productDAO.updateProduk(produk);
+		
+		return "index";
+	}*/
+	
+	@RequestMapping("/product/update/{id}")
+	public String update(Model model, @PathVariable(value = "id") int id) {
+		ProductModel produk = productDAO.selectProduk(id);
+		if (produk != null) {
+			model.addAttribute("produk", produk);
+			model.addAttribute("title","Update Student");
+			return "update-product";
+		} else {
+			model.addAttribute("id", id);
+			return "not-found";
+		}
+	}
+
+	@RequestMapping(value = "/product/update/submit/{id}", method = RequestMethod.POST)
+	public String updateSubmit(ProductModel produk, Model model)
+	{
+    	productDAO.updateProduk(produk);
+    	model.addAttribute("title","Update Student Success");
+        return "viewall";
+	}
+	
 }
